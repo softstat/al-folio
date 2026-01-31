@@ -1,0 +1,77 @@
+# -----------------------------------------------------------------------------
+# Site settings
+# -----------------------------------------------------------------------------
+
+title: blank # 빈칸으로 두면 이름이 제목이 됩니다.
+first_name: MinSeok
+middle_name: 
+last_name: Kim
+contact_note: >
+  연구 협업이나 통계 분석 관련 문의는 이메일로 부탁드립니다.
+description: >
+  Statistical Data Scientist | Biostatistics & Survival Analysis Researcher at Chung-Ang University.
+footer_text: >
+  © 2026 MinSeok Kim. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
+keywords: Survival Analysis, Biostatistics, Causal Inference, Machine Learning, Statistics
+lang: ko # 한국어 설정
+icon: 📊 # 파비콘 이모지
+
+url: https://본인아이디.github.io # TODO: 본인의 GitHub ID로 수정하세요
+baseurl: "" # 루트 도메인이면 비워둡니다.
+last_updated: true 
+back_to_top: true
+
+# -----------------------------------------------------------------------------
+# Blog (블로그 사용 시)
+# -----------------------------------------------------------------------------
+
+blog_name: Research Log
+blog_description: 통계학 및 데이터 사이언스 연구 기록
+permalink: /blog/:year/:title/
+
+# -----------------------------------------------------------------------------
+# Jekyll Scholar (논문 인용 설정)
+# -----------------------------------------------------------------------------
+
+scholar:
+  last_name: [Kim]
+  first_name: [MinSeok, M.]
+
+  style: apa
+  locale: ko
+
+  source: /_bibliography/
+  bibliography: papers.bib
+  bibliography_template: bib
+  bibtex_filters: [latex, smallcaps, superscript]
+
+  replace_strings: true
+  join_strings: true
+
+  query: "@*"
+  group_by: year
+  group_order: descending
+
+# 구글 스칼라 ID 연동 (확인하신 ID)
+scholar_userid: jiLS9akAAAAJ
+
+# -----------------------------------------------------------------------------
+# Optional Features (주요 기능 활성화)
+# -----------------------------------------------------------------------------
+
+enable_google_analytics: false 
+enable_math: true # 통계학 수식(LaTeX) 사용을 위해 반드시 true
+enable_darkmode: true # 다크모드 지원
+enable_masonry: true # 프로젝트 카드를 예쁘게 정렬
+enable_medium_zoom: true # 이미지 클릭 시 확대 기능
+enable_progressbar: true # 페이지 상단 읽기 진척도 표시
+
+# -----------------------------------------------------------------------------
+# Social Integration (하단 아이콘 연동)
+# -----------------------------------------------------------------------------
+
+social:
+  email: ipad3912@gmail.com
+  scholar: jiLS9akAAAAJ
+  github: 본인아이디 # TODO: 본인의 GitHub ID로 수정하세요
+  # linkedin: 본인아이디 # 필요 시 추가

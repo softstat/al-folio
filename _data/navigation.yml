@@ -1,0 +1,9 @@
+# 상단 내비게이션 바 구성
+- title: about
+  url: /
+- title: publications
+  url: /publications/
+- title: projects
+  url: /projects/
+- title: blog
+  url: /blog/
