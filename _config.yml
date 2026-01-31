@@ -4,7 +4,7 @@
 
 title: blank # 빈칸으로 두면 이름이 제목이 됩니다.
 first_name: MinSeok
-middle_name: 
+middle_name:
 last_name: Kim
 contact_note: >
   연구 협업이나 통계 분석 관련 문의는 이메일로 부탁드립니다.
@@ -18,7 +18,7 @@ icon: 📊 # 파비콘 이모지
 
 url: https://softstat.github.io # TODO: 본인의 GitHub ID로 수정하세요
 baseurl: "" # 루트 도메인이면 비워둡니다.
-last_updated: true 
+last_updated: true
 back_to_top: true
 
 # -----------------------------------------------------------------------------
@@ -59,7 +59,7 @@ scholar_userid: jiLS9akAAAAJ
 # Optional Features (주요 기능 활성화)
 # -----------------------------------------------------------------------------
 
-enable_google_analytics: false 
+enable_google_analytics: false
 enable_math: true # 통계학 수식(LaTeX) 사용을 위해 반드시 true
 enable_darkmode: true # 다크모드 지원
 enable_masonry: true # 프로젝트 카드를 예쁘게 정렬
