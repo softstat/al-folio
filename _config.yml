@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # 빈칸으로 두면 이름이 제목이 됩니다.
+title: "" # 빈칸으로 두면 이름이 제목이 됩니다.
 first_name: MinSeok
 middle_name:
 last_name: Kim
