@@ -2,111 +2,154 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: "" # 빈칸으로 두면 이름이 제목이 됩니다.
-first_name: MinSeok
+title: Min-seok Kim # 사이트 제목 (브라우저 탭에 표시)
+first_name: Min-seok
 middle_name:
 last_name: Kim
-contact_note: >
-  연구 협업이나 통계 분석 관련 문의는 이메일로 부탁드립니다.
+email: ipad3912@gmail.com
 description: >
-  Statistical Data Scientist | Biostatistics & Survival Analysis Researcher at Chung-Ang University.
-footer_text: >
-  © 2026 MinSeok Kim. Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-keywords: Survival Analysis, Biostatistics, Causal Inference, Machine Learning, Statistics
-lang: ko # 한국어 설정
-icon: 📊 # 파비콘 이모지
+  M.S. in Statistics Data Science at Chung-Ang University.
+  Research interests in Machine Learning, Survival Analysis, Functional Data Analysis, and Causal Inference.
+keywords: statistics, machine-learning, survival-analysis, causal-inference, deep-learning
 
-url: https://softstat.github.io # TODO: 본인의 GitHub ID로 수정하세요
-baseurl: "" # 루트 도메인이면 비워둡니다.
+url: https://본인아이디.github.io # ← 본인 GitHub 아이디로 변경!
+baseurl: "" # 서브패스 없으면 비워두기
 last_updated: true
-back_to_top: true
 
 # -----------------------------------------------------------------------------
-# Blog (블로그 사용 시)
+# Layout
 # -----------------------------------------------------------------------------
 
-blog_name: Research Log
-blog_description: 통계학 및 데이터 사이언스 연구 기록
-permalink: /blog/:year/:title/
+navbar_fixed: true
+footer_fixed: false
+enable_darkmode: true
+enable_navbar_social: false
+enable_project_categories: true
+enable_medium_zoom: true
+enable_progressbar: true
+enable_tooltips: false
 
 # -----------------------------------------------------------------------------
-# Jekyll Scholar (논문 인용 설정)
+# Open Graph & Schema.org
+# -----------------------------------------------------------------------------
+
+serve_og_meta: true
+serve_schema_org: true
+og_image: # 소셜 미디어 미리보기 이미지 (선택)
+
+# -----------------------------------------------------------------------------
+# Social integration
+# -----------------------------------------------------------------------------
+
+github_username: 본인아이디 # ← 본인 GitHub 아이디로 변경!
+# linkedin_username:          # LinkedIn 아이디 (있으면 입력)
+scholar_userid:               # Google Scholar ID (있으면 입력)
+orcid_id:                     # ORCID ID (있으면 입력)
+
+# -----------------------------------------------------------------------------
+# Analytics and search engine verification
+# -----------------------------------------------------------------------------
+
+google_analytics:  # Google Analytics ID (선택)
+
+# -----------------------------------------------------------------------------
+# Blog
+# -----------------------------------------------------------------------------
+
+blog:
+  enabled: false # 블로그 안 쓰면 false
+  pagination:
+    enabled: true
+    per_page: 5
+
+# -----------------------------------------------------------------------------
+# Collections
+# -----------------------------------------------------------------------------
+
+collections:
+  news:
+    defaults:
+      layout: post
+    output: true
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# -----------------------------------------------------------------------------
+# Scholar (논문 자동 렌더링 설정)
 # -----------------------------------------------------------------------------
 
 scholar:
   last_name: [Kim]
-  first_name: [MinSeok, M.]
+  first_name: [Min-seok, M, M.]
 
   style: apa
-  locale: ko
-
+  locale: en
   source: /_bibliography/
   bibliography: papers.bib
   bibliography_template: bib
-  bibtex_filters: [latex, smallcaps, superscript]
+  repository: pdf
 
   replace_strings: true
   join_strings: true
+
+  details_dir: bibliography
+  details_layout: bibtex.html
+  details_link: Details
 
   query: "@*"
   group_by: year
   group_order: descending
 
-# 구글 스칼라 ID 연동 (확인하신 ID)
-scholar_userid: jiLS9akAAAAJ
-
 # -----------------------------------------------------------------------------
-# Optional Features (주요 기능 활성화)
+# Responsive images (선택)
 # -----------------------------------------------------------------------------
 
-enable_google_analytics: false
-enable_math: true # 통계학 수식(LaTeX) 사용을 위해 반드시 true
-enable_darkmode: true # 다크모드 지원
-enable_masonry: true # 프로젝트 카드를 예쁘게 정렬
-enable_medium_zoom: true # 이미지 클릭 시 확대 기능
-enable_progressbar: true # 페이지 상단 읽기 진척도 표시
+imagemagick:
+  enabled: false
 
 # -----------------------------------------------------------------------------
-# Social Integration (하단 아이콘 연동)
+# Jekyll settings
 # -----------------------------------------------------------------------------
 
-social:
-  email: ipad3912@gmail.com
-  scholar: jiLS9akAAAAJ
-  github: softstat # TODO: 본인의 GitHub ID로 수정하세요
-  # linkedin: 본인아이디 # 필요 시 추가
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    css_class: "highlight"
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
 
-# -----------------------------------------------------------------------------
-# 3rd Party Libraries (정확한 URL 구조로 수정)
-# -----------------------------------------------------------------------------
+# Includes & Excludes
+include: ["_pages"]
+exclude:
+  - bin/
+  - CONTRIBUTING.md
+  - docker-compose.yml
+  - Dockerfile
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - vendor
 
-third_party_libraries:
-  mathjax:
-    url:
-      js: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
-  bootstrap:
-    url:
-      js: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
-      css: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
-  jquery:
-    url:
-      js: "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
-  fontawesome:
-    url:
-      css: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css"
-  academicons:
-    url:
-      css: "https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css"
-  masonry:
-    url:
-      js: "https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-  imagesloaded:
-    url:
-      js: "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"
-  medium_zoom:
-    url:
-      js: "https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js"
-  bootstrap_table:
-    url:
-      js: "https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.1/dist/bootstrap-table.min.js"
-      css: "https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.1/dist/bootstrap-table.min.css"
+plugins:
+  - jekyll-archives
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-jupyter-notebook
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll-regex-replace
+  - jekyll-scholar
+  - jekyll-sitemap
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
