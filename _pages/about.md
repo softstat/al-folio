@@ -1,40 +1,30 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href="https://cau.ac.kr">Chung-Ang University</a>. Statistical Data Scientist.
+subtitle: M.S. in Statistics Data Science · <a href='https://www.cau.ac.kr'>Chung-Ang University</a>, Seoul
 
 profile:
   align: right
-  image: prof_pic.jpg
-  address: >
-    <p>Biostatistics & Survival Analysis Lab</p>
-    <p>Dept. of Applied Statistics</p>
-    <p>Chung-Ang University, Seoul, Korea</p>
+  image: prof_pic.jpg  # ← assets/img/ 폴더에 프로필 사진을 prof_pic.jpg로 넣어주세요
+  image_circular: false
+  more_info: >
+    <p>Department of Statistics</p>
+    <p>Chung-Ang University</p>
+    <p>Seoul, South Korea 06974</p>
 
-news: true # 최근 소식을 표시하려면 true
-selected_papers: true # 중요 논문 강조
-social: true # 하단 소셜 아이콘 활성화
+selected_papers: true
+social: true
+announcements:
+  enabled: true
+  scrollable: true
+  limit: 5
 ---
 
-# 👋 Hello, I'm MinSeok Kim
+I am a graduate student in the Department of Statistics at [Chung-Ang University](https://www.cau.ac.kr), advised by Prof. Jooyoung Lee. I received my M.S. in Statistics Data Science (Feb 2026) and B.S. in Statistics (Feb 2024) from Chung-Ang University.
 
-데이터를 통해 생명과 사회의 인과관계를 증명하고자 하는 **통계 데이터 사이언티스트**입니다. 현재 중앙대학교 석사 과정에 재학 중이며, 생존 분석(Survival Analysis)과 인과 추론(Causal Inference)을 실제 의료 데이터 및 센서 데이터에 적용하는 연구를 수행하고 있습니다.
+My research interests lie at the intersection of **machine learning**, **survival analysis**, **functional data analysis**, and **causal inference**. My master's thesis focused on *Graph Attention Neural Networks for Survival Analysis of Default in Peer-to-Peer Lending*, combining graph-based deep learning with time-to-event modeling for financial applications.
 
-## 🎓 Education
+I have also worked on biomedical applications, including stroke gait analysis using principal component analysis and comparative effectiveness research for surgical oncology using target trial emulation approaches.
 
-- **M.S. in Statistics and Data Science**, Chung-Ang University (`2024.03 - 2026.02`)
-  - _Full CAU Graduate Scholarship_
-- **B.S. in Applied Statistics**, Chung-Ang University (`2018.03 - 2024.02`)
-
-## 🔍 Research Interests
-
-- **Survival Analysis**: 고도화된 생존 시간 모델링 및 GAT 기반 예측
-- **Biostatistics**: 의료 임상 데이터 및 센서 기반 보행 분석 (Gait Analysis)
-- **Causal Inference**: Target Trial Emulation을 활용한 실제 세계 근거(RWE) 생성
-
-## 🛠️ Tech Stack
-
-- **Languages**: Python, R, SAS, SQL
-- **Writing**: LaTeX (Academic Papers)
-- **Certifications**: 빅데이터분석기사, ADsP, SQLD, 사회조사분석사 2급
+I was awarded the **CAU Graduate Research Full Scholarship** (Spring 2024 – Fall 2025) covering full tuition and stipend throughout my graduate program.
