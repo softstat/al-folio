@@ -1,30 +1,31 @@
 ---
 layout: about
-title: About
+title: Home
 permalink: /
-subtitle: M.S. in Statistics Data Science · <a href='https://www.cau.ac.kr'>Chung-Ang University</a>, Seoul
+subtitle: M.S. Student in Statistics & Data Science, <a href="https://www.cau.ac.kr">Chung-Ang University</a>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
   more_info: >
-    <p>Department of Statistics</p>
-    <p>Chung-Ang University</p>
-    <p>Seoul, South Korea 06974</p>
+    <p>📍 Department of Applied Statistics</p>
+    <p>Chung-Ang University, Seoul</p>
+    <p>📧 ipad3912@gmail.com</p>
 
+news: true
 selected_papers: true
 social: true
-announcements:
-  enabled: true
-  scrollable: true
-  limit: 5
 ---
 
-I am a graduate student in the Department of Statistics at [Chung-Ang University](https://www.cau.ac.kr), advised by Prof. Jooyoung Lee. I received my M.S. in Statistics Data Science (Feb 2026) and B.S. in Statistics (Feb 2024) from Chung-Ang University.
+I am a graduate student in the Department of Applied Statistics at [Chung-Ang University](https://www.cau.ac.kr), advised by Prof. Jae-Hwan Jhong. My research lies at the intersection of **statistics** and **machine learning**, with a focus on solving real-world problems in healthcare and biomedicine.
 
-My research interests lie at the intersection of **machine learning**, **survival analysis**, **functional data analysis**, and **causal inference**. My master's thesis focused on _Graph Attention Neural Networks for Survival Analysis of Default in Peer-to-Peer Lending_, combining graph-based deep learning with time-to-event modeling for financial applications.
+My current work spans three main areas:
 
-I have also worked on biomedical applications, including stroke gait analysis using principal component analysis and comparative effectiveness research for surgical oncology using target trial emulation approaches.
+🔬 **Clinical Research** — Developing causal inference frameworks using target trial emulation to evaluate treatment effectiveness in bladder cancer, addressing key methodological challenges like immortal time bias.
 
-I was awarded the **CAU Graduate Research Full Scholarship** (Spring 2024 – Fall 2025) covering full tuition and stipend throughout my graduate program.
+🧠 **Biomedical Signal Analysis** — Applying Multivariate Functional PCA with Square-Root Velocity Framework (MFPCA+SRVF) to classify balance disorders in stroke patients from gait data.
+
+⚙️ **ML for Survival Analysis** — Building Graph Attention Network-based models for survival prediction, combining deep learning with traditional Cox regression approaches.
+
+Before starting my M.S., I earned a B.S. in Applied Statistics from Chung-Ang University. I enjoy transforming complex data into actionable insights, whether in healthcare, finance, or public policy.

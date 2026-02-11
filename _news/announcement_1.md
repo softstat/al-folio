@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2025-06-01
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+📄 New paper published in <b>Scientific Reports</b>: <a href="https://doi.org/10.1038/s41598-025-99710-5">"Comparative effectiveness of treatment approaches for non-muscle-invasive bladder cancer"</a>
