@@ -6,7 +6,7 @@ subtitle: M.S. in Statistics Data Science · <a href='https://www.cau.ac.kr'>Chu
 
 profile:
   align: right
-  image: prof_pic.jpg  # ← assets/img/ 폴더에 프로필 사진을 prof_pic.jpg로 넣어주세요
+  image: prof_pic.jpg # ← assets/img/ 폴더에 프로필 사진을 prof_pic.jpg로 넣어주세요
   image_circular: false
   more_info: >
     <p>Department of Statistics</p>
@@ -23,7 +23,7 @@ announcements:
 
 I am a graduate student in the Department of Statistics at [Chung-Ang University](https://www.cau.ac.kr), advised by Prof. Jooyoung Lee. I received my M.S. in Statistics Data Science (Feb 2026) and B.S. in Statistics (Feb 2024) from Chung-Ang University.
 
-My research interests lie at the intersection of **machine learning**, **survival analysis**, **functional data analysis**, and **causal inference**. My master's thesis focused on *Graph Attention Neural Networks for Survival Analysis of Default in Peer-to-Peer Lending*, combining graph-based deep learning with time-to-event modeling for financial applications.
+My research interests lie at the intersection of **machine learning**, **survival analysis**, **functional data analysis**, and **causal inference**. My master's thesis focused on _Graph Attention Neural Networks for Survival Analysis of Default in Peer-to-Peer Lending_, combining graph-based deep learning with time-to-event modeling for financial applications.
 
 I have also worked on biomedical applications, including stroke gait analysis using principal component analysis and comparative effectiveness research for surgical oncology using target trial emulation approaches.
 
