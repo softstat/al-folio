@@ -6,7 +6,7 @@ subtitle: M.S. in Statistics Data Science · <a href='https://www.cau.ac.kr'>Chu
 
 profile:
   align: right
-  image: prof_pic.jpg # ← assets/img/ 폴더에 프로필 사진을 prof_pic.jpg로 넣어주세요
+  image: prof_pic.jpg
   image_circular: false
   more_info: >
     <p>Department of Statistics</p>
