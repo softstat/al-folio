@@ -1,9 +1,5 @@
 cv_pdf: /assets/pdf/CV_Kim.pdf
-google_scholar:
-  scholar_userid: jiLS9akAAAAJ
-email:
-  email: ipad3912@gmail.com
-github:
-  username: softstat
-orcid:
-  orcid_id: 0009-0009-2586-3252
+email: ipad3912@gmail.com
+scholar_userid: jiLS9akAAAAJ
+github_username: softstat
+orcid_id: 0009-0009-2586-3252
