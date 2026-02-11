@@ -12,7 +12,7 @@ description: >
   Research interests in Machine Learning, Survival Analysis, Functional Data Analysis, and Causal Inference.
 keywords: statistics, machine-learning, survival-analysis, causal-inference, deep-learning
 
-url: https://본인아이디.github.io # ← 본인 GitHub 아이디로 변경!
+url: https://softstat.github.io # ← 본인 GitHub 아이디로 변경!
 baseurl: "" # 서브패스 없으면 비워두기
 last_updated: true
 
