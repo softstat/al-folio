@@ -150,12 +150,9 @@ plugins:
   - jekyll-twitter-plugin
   - jemoji
 
-cat >> _config.yml << 'EOF'
-
 # -----------------------------------------------------------------------------
 # Third Party Libraries
 # -----------------------------------------------------------------------------
 third_party_libraries:
   download: false
   integrity: false
-EOF
