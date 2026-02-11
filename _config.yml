@@ -40,16 +40,14 @@ og_image: # 소셜 미디어 미리보기 이미지 (선택)
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: 본인아이디 # ← 본인 GitHub 아이디로 변경!
-# linkedin_username:          # LinkedIn 아이디 (있으면 입력)
-scholar_userid: # Google Scholar ID (있으면 입력)
-orcid_id: # ORCID ID (있으면 입력)
+github_username: softstat
+scholar_userid: jiLS9akAAAAJ
+orcid_id: 0009-0009-2586-3252
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
 # -----------------------------------------------------------------------------
 
-google_analytics: # Google Analytics ID (선택)
 
 # -----------------------------------------------------------------------------
 # Blog
