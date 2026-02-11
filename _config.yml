@@ -22,7 +22,7 @@ last_updated: true
 navbar_fixed: true
 footer_fixed: false
 enable_darkmode: true
-enable_navbar_social: false
+enable_navbar_social: true
 enable_project_categories: true
 enable_medium_zoom: true
 enable_progressbar: true

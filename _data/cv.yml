@@ -66,3 +66,19 @@
     - title: President, 35th Applied Statistics Student Council
       institution: Department of Statistics, Chung-Ang University
       year: Dec 2022 - Nov 2023
+
+- title: Certifications
+  type: time_table
+  contents:
+    - title: 빅데이터분석기사 (Big Data Analytics Engineer)
+      institution: 한국데이터산업진흥원
+    - title: ADsP (Advanced Data Analytics Semi-Professional)
+      institution: 한국데이터산업진흥원
+    - title: SQLD (SQL Developer)
+      institution: 한국데이터산업진흥원
+    - title: 사회조사분석사 2급 (Social Survey Analyst Level 2)
+      institution: 한국산업인력공단
+    - title: 컴퓨터활용능력 1급 (Computer Literacy Level 1)
+      institution: 대한상공회의소
+    - title: 한국사능력검정시험 1급 (Korean History Level 1)
+      institution: 국사편찬위원회
