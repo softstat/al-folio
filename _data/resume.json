@@ -1,0 +1,119 @@
+{
+  "basics": {
+    "name": "Min-seok Kim",
+    "label": "Graduate Student in Statistics Data Science",
+    "image": "",
+    "email": "ipad3912@gmail.com",
+    "phone": "+82) 10-8737-6864",
+    "url": "",
+    "summary": "M.S. in Statistics Data Science at Chung-Ang University. Research interests in Machine Learning, Survival Analysis, Functional Data Analysis, and Causal Inference.",
+    "location": {
+      "address": "",
+      "postalCode": "06974",
+      "city": "Seoul",
+      "countryCode": "KR",
+      "region": ""
+    },
+    "profiles": []
+  },
+  "education": [
+    {
+      "institution": "Chung-Ang University, Seoul, Korea",
+      "url": "https://www.cau.ac.kr",
+      "area": "Statistics Data Science",
+      "studyType": "M.S.",
+      "startDate": "2024-03-01",
+      "endDate": "2026-02-28",
+      "score": "4.35 / 4.5",
+      "courses": []
+    },
+    {
+      "institution": "Chung-Ang University, Seoul, Korea",
+      "url": "https://www.cau.ac.kr",
+      "area": "Statistics",
+      "studyType": "B.S.",
+      "startDate": "2018-03-01",
+      "endDate": "2024-02-28",
+      "score": "3.92 / 4.5",
+      "courses": []
+    }
+  ],
+  "publications": [
+    {
+      "name": "Standing balance test predicts the Berg Balance Scale score in patients with stroke using principal component analysis",
+      "publisher": "Scientific Reports",
+      "releaseDate": "2025",
+      "url": "",
+      "summary": "Cho J, Ha S, Lee J, Kim M, Kim H."
+    },
+    {
+      "name": "Comparison of Overall Survival After Open vs. Robot-Assisted Radical Cystectomy: A Target Trial Emulation Approach to Mitigate Immortal Time Bias",
+      "publisher": "The Korean Journal of Applied Statistics",
+      "releaseDate": "2025",
+      "url": "",
+      "summary": "Kim M, Lee J."
+    },
+    {
+      "name": "Stroke walking and balance characteristics via principal component analysis",
+      "publisher": "Scientific Reports",
+      "releaseDate": "2024",
+      "url": "",
+      "summary": "Cho J, Ha S, Lee J, Kim M, Kim H."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Prediction and Classification of Cold Patients Using Sports Facility Data",
+      "startDate": "2023-11-01",
+      "endDate": "2023-11-30",
+      "description": "",
+      "highlights": []
+    },
+    {
+      "name": "Site Analysis for Wireless Charging Highways Using Regional Clustering",
+      "startDate": "2022-10-01",
+      "endDate": "2022-10-31",
+      "description": "",
+      "highlights": []
+    },
+    {
+      "name": "Prediction of Loan Product Applications",
+      "startDate": "2022-08-01",
+      "endDate": "2022-08-31",
+      "description": "",
+      "highlights": []
+    },
+    {
+      "name": "AI-based Resume Analysis",
+      "startDate": "2022-04-01",
+      "endDate": "2022-04-30",
+      "description": "",
+      "highlights": []
+    }
+  ],
+  "awards": [
+    {
+      "title": "CAU Graduate Research Full Scholarship",
+      "date": "2024-03-01",
+      "awarder": "Chung-Ang University",
+      "url": "",
+      "summary": "Full tuition and stipend support (Spring 2024 – Fall 2025)"
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "35th Applied Statistics Student Council, Chung-Ang University",
+      "position": "President",
+      "url": "",
+      "startDate": "2022-12-01",
+      "endDate": "2023-11-30",
+      "summary": "Department of Statistics, Chung-Ang University"
+    }
+  ],
+  "interests": [
+    { "name": "Machine Learning & Deep Learning" },
+    { "name": "Survival Analysis" },
+    { "name": "Functional Data Analysis" },
+    { "name": "Causal Inference" }
+  ]
+}
