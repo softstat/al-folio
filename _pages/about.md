@@ -18,7 +18,7 @@ selected_papers: true
 social: true
 ---
 
-I am a graduate student in the Department of Applied Statistics at [Chung-Ang University](https://www.cau.ac.kr), advised by Prof. Jae-Hwan Jhong. My research lies at the intersection of **statistics** and **machine learning**, with a focus on solving real-world problems in healthcare and biomedicine.
+I am a graduate student in the Department of Applied Statistics at [Chung-Ang University](https://www.cau.ac.kr), advised by Prof. Jooyoung Lee. My research lies at the intersection of **statistics** and **machine learning**, with a focus on solving real-world problems in healthcare and biomedicine.
 
 My current work spans three main areas:
 
