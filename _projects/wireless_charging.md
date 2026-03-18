@@ -1,28 +1,113 @@
 ---
 layout: page
-title: Wireless Charging Highway
-description: Site analysis for wireless charging highways using regional clustering.
+title: 전기차 무선 충전도로 최적 입지 분석
+description: >
+  권역별 K-Means 클러스터링을 활용한 국내 고속도로
+  무선충전 인프라 입지 선정 — 그리고 데이터가 틀렸을 때
+  분석 전체가 무너진다는 걸 배운 프로젝트.
 img:
 importance: 2
 category: Data Science
 ---
 
-## Overview
+## 개요
 
-Conducted a comprehensive site analysis for optimal placement of wireless charging infrastructure on Korean highways. This project aimed to support the transition to electric vehicles by identifying strategic locations for dynamic wireless charging systems.
+학과 공모전에서 국내 고속도로 전 구간을 대상으로 동적 무선충전
+(DWPT) 인프라의 최적 설치 구간을 분석했습니다. 전체 1,213개
+구간에서 360개의 우선 입지를 도출했으며, 전국 클러스터링 시
+수도권으로 결과가 쏠리는 문제를 권역 분리 방식으로 해결한 것이
+이 프로젝트의 핵심 설계 결정이었습니다.
 
-## Methods
+## 결과가 이상하다는 걸 눈치챈 순간
 
-- Analyzed traffic volume data, geographic features, and existing EV infrastructure across Korean highway networks
-- Applied K-means and DBSCAN clustering algorithms to identify high-potential regions
-- Integrated GIS data for spatial analysis and visualization
-- Evaluated candidate sites based on traffic density, proximity to urban centers, and construction feasibility
+분석 초반, 지도상으로는 고속도로 바로 옆에 있는 지점들이 수
+킬로미터 떨어진 것으로 계산되는 이상한 결과가 나왔습니다.
 
-## Key Results
+원인을 파고들었더니 공공데이터마다 좌표계가 달랐습니다. 교통량
+데이터, 도로망 셰이프파일, 행정 경계가 각자 다른 좌표계를 쓰고
+있어 공간 조인이 조용히 어긋나고 있었습니다. PyProj로 전체
+데이터를 **EPSG:5179**로 통일 재투영하는 것만으로는 충분하지
+않았습니다. 한국 고속도로는 산지가 많아 굴곡 구간이 상당한데,
+좌표 간 유클리디안 거리를 그대로 쓰면 실제 주행 경로와 전혀 다른
+값이 나옵니다. 이를 해결하기 위해 **NetworkX**로 고속도로
+네트워크를 그래프로 구성해 실제 도로 형상 위의 최단 경로로
+거리를 측정했고, 좌표 재투영과 함께 약 50만 건을 재정제한 뒤
+공간 연산 속도가 약 80% 단축됐습니다.
 
-- Identified top candidate highway segments for wireless charging installation
-- Created interactive maps visualizing optimal placement zones
-- Provided a data-driven framework for infrastructure planning decisions
+## 분석 설계: 왜 권역을 먼저 나눴는가
 
-**Period:** October 2022
-**Tools:** Python, scikit-learn, Folium, GeoPandas
+교통량은 수도권과 경부권에 집중되어 있어 전국을 한 번에
+클러스터링하면 입지가 수도권으로만 쏠립니다. 고속도로는 장거리
+주행 수단이므로 어느 한 권역에 집중된 충전 인프라는 실효성이
+떨어집니다.
+
+이에 각 구간의 위치 좌표를 기준으로 전국을 **수도권 / 강원권 /
+호남권 / 영남권** 네 권역으로 먼저 분리한 뒤, 각 권역 내에서
+독립적으로 클러스터링을 수행했습니다.
+
+## 변수 구성과 방향성
+
+선행연구의 한계였던 변수 부족 문제를 해결하기 위해 5개 변수를
+활용했습니다. 주행속도 데이터가 권역 단위로만 존재해 구간별
+직접 사용이 불가능했기 때문에, 속도에 영향을 주는 간접 변수를
+대신 활용했습니다.
+
+| 변수 | 방향 | 선정 근거 |
+|------|------|-----------|
+| 구간 내 일일 교통량 | 높을수록 우수 | 충전 수혜 차량 수 |
+| 구간 길이 | 길수록 우수 | 충전 가능 시간 비례 |
+| 과속단속카메라 수 | 많을수록 우수 | 감속 유도 → 충전량 증가 |
+| 교통사고 건수 | 많을수록 우수 | 정체 유발 → 체류 시간 증가 |
+| 기존 충전소 수 | 낮을수록 우수 | 인프라 공백 지역 우선 |
+
+충전소 수의 방향이 반대인 점을 고려해 StandardScaler로 스케일링 후
+클러스터링을 수행했습니다.
+
+## K-Means 클러스터링
+
+각 권역별로 Elbow Method(WCSS 기준)와 세 가지 스케일러
+(MinMaxScaler, StandardScaler, RobustScaler) 비교를 통해 최적
+클러스터 수를 결정했습니다.
+
+| 권역 | 최적 K | 선정 구간 수 |
+|------|--------|-------------|
+| 수도권 | 3 | 99개 |
+| 강원권 | 3 | 26개 |
+| 호남권 | 4 | 124개 |
+| 영남권 | 3 | 111개 |
+| **전체** | — | **360개** |
+
+권역별 Scatter Plot에서 모든 변수 기준으로 가장 유리한 분포를
+보이는 군집을 최적 군집으로 선정했습니다. 수도권은 신갈JC–서울IC
+등 경부선 구간이, 영남권은 금호JC–북대구IC 구간과 남해선 진영JC
+일대가 포함됐습니다.
+
+## 시각화는 번역이었습니다
+
+Folium 인터랙티브 지도는 분석의 마무리가 아니라 커뮤니케이션
+도구였습니다. 팀원 대부분은 좌표계나 공간 조인 같은 개념에
+익숙하지 않았고, 기술적으로 올바른 결과라도 혼자만 이해하는
+결과는 공모전에서 가치가 없습니다.
+
+충전소, 과속단속카메라, 사고 데이터를 레이어로 분리하고
+ZOOM-IN/OUT 기능을 활용해 비전문가도 지도를 보며 즉시 판단을
+내릴 수 있도록 설계했습니다. 기술적 내용을 시각적 언어로 옮기는
+작업이 분석 자체만큼 어렵다는 것, 그때 처음 체감했습니다.
+
+수상은 못했습니다. 그러나 직선 거리 한계, 전기차 전용 교통량
+데이터 부재, 민간 데이터 미활용이라는 한계를 직접 마주하면서
+다음에 무엇을 개선해야 하는지가 분명해진 프로젝트였습니다.
+
+## 스마트 모빌리티 인프라와의 연결
+
+이질적인 공공 공간 데이터 통합, 도로망 그래프 기반 경로 분석,
+지역 불균형을 보정하는 분석 설계, 비전문가를 위한 결과 시각화 —
+이 프로젝트에서 다룬 문제들은 정밀지도 제작, 도로 인프라
+커버리지 최적화, 커넥티드 도로 데이터 관리 과정에서 반복적으로
+나타나는 과제와 직접적으로 맞닿아 있습니다.
+
+**기간:** 2022년 10월  
+**사용 도구:** Python, PyProj, GeoPandas, Shapely, NetworkX,
+scikit-learn, Folium, Google Geocoding API, 네이버 지도 API  
+**데이터 출처:** 한국도로공사(교통량), 경찰청(과속단속카메라),
+ITS 국가교통정보센터(사고정보), 한국환경공단(충전소 좌표)
