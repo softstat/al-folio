@@ -1,28 +1,63 @@
 ---
 layout: page
-title: AI Resume Analysis
-description: AI-based resume analysis system for automated evaluation.
+title: AI 기반 이력서 자동 분석 시스템
+description: >
+  NLP와 Flask 백엔드, HTML/CSS/JS 프론트엔드, AWS EC2 배포까지
+  직접 구축한 한이음 ICT 멘토링 프로젝트.
 img:
 importance: 4
 category: Data Science
 ---
 
-## Overview
+## 개요
 
-Developed an AI-powered resume analysis system that automates the screening and evaluation of job applicant resumes. The system extracts key information and scores candidates based on job-specific criteria.
+한이음 ICT 멘토링 프로젝트로, 채용 담당자의 이력서 검토 부담을
+줄이기 위한 AI 기반 자동 분석 시스템을 팀으로 개발했습니다.
+PDF·DOCX 형식의 이력서를 업로드하면 직무 기술서와의 적합도를
+자동으로 평가하고 항목별 점수를 제공하는 웹 서비스입니다.
+NLP 모델 개발부터 프론트엔드 구현, AWS EC2 배포까지 전 과정을
+팀이 직접 담당했습니다.
 
-## Methods
+## 참고할 자료가 없는 상황에서 만들어야 했습니다
 
-- Built a text extraction pipeline using NLP techniques to parse resume documents in various formats (PDF, DOCX)
-- Applied TF-IDF and word embedding models to represent resume content as feature vectors
-- Implemented keyword matching and semantic similarity scoring against job descriptions
-- Developed a scoring algorithm that evaluates candidates across multiple dimensions: education, experience, skills, and certifications
+한이음 프로젝트 특성상 유사한 선행 구현체나 참고할 레퍼런스가
+많지 않았습니다. NLP 분석 모델을 Flask 백엔드와 연결하고,
+이를 다시 HTML/CSS/JS 프론트엔드와 붙인 뒤 EC2에 올리는 전체
+파이프라인을 처음부터 직접 설계해야 했습니다.
 
-## Key Results
+특히 배포 과정에서 로컬 환경과 서버 환경의 의존성 충돌,
+포트 설정, 보안 그룹 구성 같은 문제들이 연달아 발생했고,
+공식 문서와 시행착오를 반복하며 하나씩 해결했습니다.
+모델을 잘 만드는 것과 실제로 작동하는 서비스를 만드는 것이
+전혀 다른 문제라는 걸 이 프로젝트에서 처음 체감했습니다.
 
-- Automated resume screening process, significantly reducing manual review time
-- Achieved reliable matching between candidate profiles and job requirements
-- Provided interpretable scores with breakdown by evaluation category
+## 시스템 구성
 
-**Period:** April 2022
-**Tools:** Python, NLP (KoNLPy, TF-IDF), scikit-learn, Flask
+**NLP 분석 파이프라인**
+- KoNLPy를 활용해 한국어 이력서 텍스트 전처리 및 형태소 분석
+- TF-IDF와 단어 임베딩으로 이력서 내용을 특징 벡터로 변환
+- 직무 기술서와의 키워드 매칭 및 의미적 유사도 기반 점수 산출
+- 학력, 경력, 기술 스택, 자격증 4개 항목별 세분화 평가
+
+**웹 서비스 구현**
+- Flask 백엔드로 분석 API 구성 및 PDF·DOCX 파일 처리
+- HTML/CSS/JS로 이력서 업로드 및 결과 대시보드 프론트엔드 구현
+- AWS EC2에 서버 배포 및 운영 환경 구성
+
+## 주요 결과
+
+- 이력서 업로드부터 항목별 점수 출력까지 자동화된 웹 서비스 완성
+- 직무 기술서 기준 후보자 적합도를 수치로 제공해 검토 시간 단축
+- 분석 근거를 항목별로 분리 표시해 결과 해석 가능성 확보
+
+## 배운 것
+
+레퍼런스 없이 전체 스택을 직접 연결하는 경험은 단순히 모델을
+개발하는 것보다 훨씬 많은 것을 요구했습니다. 환경 설정 오류 하나가
+전체 서비스를 멈추는 상황을 반복하면서, 데이터 사이언티스트에게도
+배포와 운영에 대한 이해가 왜 필요한지를 실감했습니다.
+
+**기간:** 2022년 4월 — 2022년 11월 (8개월)
+**프로그램:** 한이음 ICT 멘토링
+**사용 도구:** Python, KoNLPy, TF-IDF, scikit-learn,
+Flask, HTML/CSS/JS, AWS EC2
