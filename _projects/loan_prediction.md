@@ -1,29 +1,71 @@
 ---
 layout: page
-title: Loan Application Prediction
-description: Prediction of loan product applications using machine learning.
+title: 핀다 앱 사용자 대출 신청 여부 예측
+description: >
+  2022 빅콘테스트 데이터분석리그 퓨처스 부문 —
+  핀다 실제 금융 데이터 기반 대출 신청 예측 및
+  고객 군집화 프로젝트.
 img:
 importance: 3
 category: Data Science
 ---
 
-## Overview
+## 개요
 
-Built a machine learning pipeline to predict whether customers would apply for specific loan products, enabling targeted marketing and improved customer service for financial institutions.
+과학기술정보통신부·NIA 주최, 핀다(Finda) 주관의
+**2022 빅콘테스트 데이터분석리그 퓨처스 부문**에 팀으로
+참가했습니다. 핀다 앱 사용자의 신용 정보, 대출신청 이력,
+앱 행동 로그를 바탕으로 대출 신청 가능성을 예측하는 이진 분류
+문제와, 고객 군집화를 통한 개인화 서비스 메시지 제안이
+두 축을 이루는 과제였습니다. 일반적으로 접하기 어려운
+핀테크 기업의 실제 금융 데이터 약 1만 건을 다룬 경험이었습니다.
 
-## Methods
+## 분석 관점 설정
 
-- Processed a large-scale financial dataset with nearly one million customer records
-- Engineered features from demographic, transactional, and behavioral data
-- Trained and compared multiple models including Logistic Regression, Random Forest, XGBoost, and neural networks
-- Addressed class imbalance through SMOTE and cost-sensitive learning
-- Optimized hyperparameters via Bayesian optimization and cross-validation
+대출 신청 여부는 단일 요인으로 결정되지 않습니다. 데이터
+탐색을 통해 **고객 상황**, **고객 행동**, **대출 상품** 세 가지
+관점으로 분석 프레임을 구성하고, 각 관점에서 유의미한 피처를
+도출했습니다.
 
-## Key Results
+외부 데이터도 두 방향에서 수집했습니다. 코인 가격, 금리,
+실업률, KOSPI 지수 등 거시 경제 지표와, 소비자심리지수 등
+개인 의사결정에 영향을 주는 내부 심리 요인이 그것입니다.
+단순 앱 로그 데이터만으로는 포착하기 어려운 맥락을 외부
+정보로 보완하기 위한 선택이었습니다.
 
-- Achieved high predictive accuracy for loan application behavior
-- Identified key customer segments most likely to apply for loan products
-- Feature importance analysis revealed critical drivers of loan application decisions
+## 모델링: 대출 신청 예측 (F1 Score 최적화)
 
-**Period:** August 2022
-**Tools:** Python, scikit-learn, XGBoost, LightGBM, pandas
+클래스 불균형 문제를 SMOTE와 비용 민감 학습으로 처리한 뒤,
+Logistic Regression, Random Forest, XGBoost, LightGBM,
+신경망 모델을 비교 실험했습니다. 베이지안 최적화와
+교차검증으로 하이퍼파라미터를 튜닝하고, 평가지표인
+F1 Score 기준으로 최종 모델을 선정했습니다.
+
+피처 중요도 분석을 통해 대출 신청 결정에 가장 큰 영향을
+미치는 변수를 식별했고, 이를 서비스 메시지 전략 수립에도
+연결했습니다.
+
+## 고객 군집화 및 서비스 제안
+
+수치형 고객 스펙 변수를 기반으로 K-Means 클러스터링을
+적용해 5개 군집을 도출했습니다. 군집 특성을 분석한 결과
+고객을 3개 층위로 구분할 수 있었고, 각 층위에 맞는
+맞춤형 서비스 메시지를 제안했습니다.
+
+- **신규 고객**: 핀다 주요 기능 튜토리얼 및 서비스 온보딩
+- **활성 고객**: 클러스터 행동 패턴 기반 대출 상품 추천
+- **비활성 고객**: 재방문 유도 및 금리 변화 알림 메시지
+
+## 배운 것
+
+공모전 데이터임에도 실제 금융 서비스에서 사용되는 데이터
+구조를 다뤘다는 점에서, 모델 성능만큼이나 비즈니스 문제
+정의와 결과의 해석 가능성이 중요하다는 것을 실감했습니다.
+예측 모델과 군집화를 연결해 실제 서비스 전략까지 도출하는
+흐름을 경험한 것이 이 프로젝트의 가장 큰 수확이었습니다.
+
+**기간:** 2022년 8월 — 2022년 10월  
+**대회:** 2022 빅콘테스트 데이터분석리그 퓨처스 부문 (핀다 과제)  
+**주최:** 과학기술정보통신부 · NIA 한국지능정보사회진흥원  
+**사용 도구:** Python, pandas, scikit-learn, XGBoost, LightGBM,
+imbalanced-learn (SMOTE)
