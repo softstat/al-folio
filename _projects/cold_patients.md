@@ -1,28 +1,62 @@
 ---
 layout: page
-title: Cold Patient Prediction
-description: Prediction and classification of cold patients using sports facility data.
+title: 체육시설 이용 데이터 기반 감기 환자 예측
+description: >
+  국민체육공단 데이터를 활용한 감기 환자 분류 모델 —
+  전공자, 비전공자, 외국인 학생이 함께한 수업 팀 프로젝트.
 img:
 importance: 1
 category: Research
 ---
 
-## Overview
+## 개요
 
-Developed a predictive model for classifying cold patients by analyzing sports facility usage patterns in South Korea. The goal was to identify individuals at high risk of respiratory illness based on their behavioral and environmental data.
+4학년 'AI를 위한 머신러닝' 수업의 팀 프로젝트로,
+국민체육공단의 체육시설 이용 데이터와 건강보험 청구 데이터를
+연계해 감기 환자를 예측하는 분류 모델을 개발했습니다.
+비임상 데이터만으로 호흡기 질환 위험군을 식별할 수 있는지를
+검증하는 것이 핵심 목표였습니다.
 
-## Methods
+## 전공자, 비전공자, 외국인이 한 팀이었습니다
 
-- Collected and preprocessed sports facility usage records linked to health insurance claim data
-- Applied multiple classification algorithms including Logistic Regression, Random Forest, XGBoost, and LightGBM
-- Performed feature engineering to extract temporal and frequency-based behavioral features
-- Evaluated models using accuracy, F1-score, and AUC-ROC metrics
+팀 구성이 균일하지 않았습니다. 머신러닝에 익숙한 전공자부터
+코드를 처음 접하는 비전공자, 한국어가 익숙하지 않은 외국인
+학생까지 각자의 출발점이 달랐습니다. 팀장을 맡아 역할 배분부터
+다시 설계했습니다.
 
-## Key Results
+기술적 난이도가 높은 모델링과 피처 엔지니어링은 전공자가
+담당하고, 비전공자는 데이터 수집과 결과 해석, 시각화에
+집중할 수 있도록 역할을 나눴습니다. 코드 리뷰나 분석
+방향 논의 시에는 수식보다 "이 변수가 왜 중요한지"를
+실생활 예시로 설명하는 방식을 택했습니다.
 
-- Identified key behavioral indicators correlated with cold susceptibility
-- Achieved strong classification performance through ensemble methods
-- Demonstrated the feasibility of using non-clinical data for health risk prediction
+분석을 잘 하는 것과 팀이 같은 방향을 이해하며 움직이게
+만드는 것이 다른 문제라는 걸, 이 프로젝트에서 다시 한번
+확인했습니다.
 
-**Period:** November 2023
-**Tools:** Python, scikit-learn, XGBoost, pandas
+## 데이터 및 피처 구성
+
+국민체육공단의 체육시설 이용 기록을 기반으로 시간대별
+방문 빈도, 시설 유형, 이용 패턴의 주기성 등 행동 기반
+피처를 추출했습니다. 계절성과 외부 온도 변화 같은 환경
+요인도 함께 고려했습니다.
+
+## 모델링
+
+Logistic Regression, Random Forest, XGBoost, LightGBM을
+비교 실험했으며, Accuracy, F1 Score, AUC-ROC를 기준으로
+성능을 평가했습니다. 앙상블 기반 모델이 가장 안정적인
+성능을 보였고, 피처 중요도 분석을 통해 감기 발생과
+상관관계가 높은 행동 지표를 식별했습니다.
+
+## 주요 결과
+
+- 체육시설 이용 패턴만으로 감기 위험군 분류 가능성 확인
+- 앙상블 모델 기준 F1 Score 및 AUC-ROC에서 기준 모델 대비
+  유의미한 성능 향상
+- 비임상 데이터의 건강 예측 활용 가능성에 대한 실증적 근거 제시
+
+**기간:** 2023년 11월  
+**맥락:** 4학년 'AI를 위한 머신러닝' 수업 팀 프로젝트  
+**데이터 출처:** 국민체육공단  
+**사용 도구:** Python, pandas, scikit-learn, XGBoost, LightGBM
