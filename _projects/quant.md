@@ -4,8 +4,8 @@ title: 퀀트 트레이딩 프레임워크
 description: >
   GAT와 DeepSurv를 활용한 퀀트 투자 모델 -
   LLAMA를 활용하여 YahooFinance 기사와 Earnings를 분석
-importance: 4
-category: Project
+importance: 2
+category: Research
 ---
 
 
