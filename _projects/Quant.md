@@ -1,3 +1,15 @@
+---
+layout: page
+title: 퀀트 트레이딩 프레임워크
+description: >
+  GAT와 DeepSurv를 활용한 퀀트 투자 모델 —
+  LLAMA를 활용하여 YahooFinance 기사와 Earnings를 분석 
+img:
+importance: 1
+category: Project
+---
+
+
 # Quant Survival × GNN × LLaMA Framework
 
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue) ![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c) ![Groq](https://img.shields.io/badge/LLaMA-3.1_via_Groq-black) ![License](https://img.shields.io/badge/License-MIT-green)
